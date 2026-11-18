@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sage &amp; Steel pin</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&display=block">
+<script src="../art.js"></script>
+<style>
+/* Renders one 1000 x 1500 pin. Open pin-template.html?p=<key> and screenshot it at 1000 x 1500. */
+:root{--cream:#F7F1E8;--paper:#FFFDF9;--line:#E5DACA;--ink:#26302B;--ink-2:#47534C;--muted:#5E6A63;--sage:#94A88A;--sage-d:#5F7457;--sage-dd:#4A5E44;--sage-s:#E2E9DA;--clay:#D98B6A;--clay-d:#B4694B;--clay-t:#9E5434;--clay-s:#F6E0D4;--lilac-s:#ECE5F5;--mist-s:#DDEAF1;--butter:#F4E2A8;--serif:"Fraunces",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1000px;height:1500px;overflow:hidden;background:var(--cream)}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+.pin{position:relative;width:1000px;height:1500px;display:flex;flex-direction:column;padding:54px 64px 0;overflow:hidden;isolation:isolate}
+.orb{position:absolute;z-index:-1;border-radius:50%}
+.orb--a{right:-180px;top:-200px;width:620px;height:620px;background:var(--tint,var(--sage-s))}
+.orb--b{left:-140px;top:520px;width:300px;height:300px;background:var(--clay-s);opacity:.6}
+.head{display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:14px;font:600 36px/1 var(--serif);font-variation-settings:"SOFT" 100,"WONK" 0;letter-spacing:-.01em}
+.brand em{font-style:italic;font-weight:400;color:var(--clay-d)}
+.brand svg{width:58px;height:58px}
+.label{padding:13px 22px;border-radius:999px;background:var(--paper);border:1.5px solid var(--line);font:600 19px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.eyebrow{margin-top:70px;font:600 24px/1.2 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--acc,var(--sage-dd))}
+h1{margin-top:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100,"WONK" 0;font-weight:500;font-size:var(--hs,128px);line-height:.95;letter-spacing:-.035em}
+h1 span{display:block}
+h1 em{font-style:italic;font-weight:400;color:var(--sage-dd)}
+.body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:34px 0 30px}
+.note{font-size:25px;line-height:1.4;color:var(--ink-2);text-align:center;font-style:italic}
+.foot{flex:none;margin:0 -64px;padding:34px 64px 46px;background:var(--ink);color:var(--cream);display:flex;justify-content:space-between;align-items:center;gap:24px}
+.cta{font:italic 400 44px/1.1 var(--serif);font-variation-settings:"SOFT" 100,"WONK" 0}
+.url{flex:none;padding:16px 24px;border-radius:999px;background:var(--cream);color:var(--ink);font:600 24px/1 var(--sans)}
+
+/* Rows */
+.card{display:flex;gap:24px;align-items:center;padding:22px 28px;background:var(--paper);border:1.5px solid var(--line);border-radius:28px}
+.mk{flex:none;width:66px;height:66px;border-radius:50%;background:var(--sage-s);display:grid;place-items:center;font:italic 400 36px/1 var(--serif);color:var(--sage-dd)}
+.mk svg{width:30px;height:30px}
+.card b{display:block;font:600 32px/1.2 var(--sans)}
+.card span{display:block;margin-top:4px;font-size:25px;line-height:1.36;color:var(--ink-2)}
+
+/* Compare */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.col{padding:30px 28px 34px;background:var(--paper);border:1.5px solid var(--line);border-top:14px solid var(--c);border-radius:30px}
+.col h2{font:500 50px/1 var(--serif);font-variation-settings:"SOFT" 100,"WONK" 0}
+.col p{margin-top:8px;font:600 19px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.col ul{list-style:none;display:grid;gap:18px;margin-top:26px}
+.col li{display:flex;gap:14px;font-size:28px;line-height:1.3}
+.col li::before{content:"";flex:none;width:16px;height:16px;margin-top:11px;border-radius:50%;background:var(--c)}
+
+/* Tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tile{display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:170px;padding:24px 28px;background:var(--paper);border:1.5px solid var(--line);border-radius:28px}
+.tile i{font:italic 400 64px/1 var(--serif);font-variation-settings:"SOFT" 100,"WONK" 0;color:var(--clay-t)}
+.tile b{font:600 28px/1.25 var(--sans)}
+.gift{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 18px 22px;background:var(--paper);border:1.5px solid var(--line);border-radius:28px}
+.gift .art{width:170px;height:170px;background:var(--cs);border-radius:24px;padding:10px}
+.gift b{font:600 27px/1.2 var(--sans);text-align:center}
+.tiles--3{grid-template-columns:repeat(3,1fr)}
+
+/* Tote */
+.totebox{display:grid;justify-items:center}
+.totebox .tote{width:620px;height:auto}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.chips span{padding:12px 19px;border-radius:999px;background:var(--paper);border:1.5px solid var(--line);font:500 22px/1 var(--sans)}
+
+/* Big answer */
+.big{font:italic 400 230px/.82 var(--serif);font-variation-settings:"SOFT" 100,"WONK" 0;color:var(--clay);letter-spacing:-.04em}
+
+/* Shelf */
+.struck{list-style:none;display:grid;justify-items:center;gap:8px}
+.struck li{position:relative;font:italic 400 108px/1.1 var(--serif);font-variation-settings:"SOFT" 100,"WONK" 0;letter-spacing:-.02em}
+.struck li::after{content:"";position:absolute;left:-5%;right:-5%;top:55%;height:9px;border-radius:9px;background:var(--clay);transform:rotate(-4deg)}
+.instead{margin-top:24px;padding:28px 32px;border-radius:30px;background:var(--sage-s);text-align:center}
+.instead p{font:600 20px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--sage-dd)}
+.instead b{display:block;margin-top:14px;font:500 34px/1.3 var(--serif);font-variation-settings:"SOFT" 100,"WONK" 0}
+</style>
+</head>
+<body>
+<div class="pin" id="pin"></div>
+<script>
+const MARK = '<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18.6" fill="#E2E9DA" stroke="#26302B" stroke-width="2.4"/><circle cx="20" cy="20" r="14" fill="none" stroke="#26302B" stroke-width="1" opacity=".22"/><path d="M20 31V12" stroke="#4A5E44" stroke-width="1.8" stroke-linecap="round"/><path d="M20 25.5c-4.6-.6-7.4-3.6-7.6-7.8 4.4.3 7.2 3.2 7.6 7.8z" fill="#94A88A"/><path d="M20 20.5c4.6-.6 7.4-3.6 7.6-7.8-4.4.3-7.2 3.2-7.6 7.8z" fill="#5F7457"/><path d="M20 13.4c-1.9-1.5-2.6-3.6-2-6 2.2.8 3.2 3 2 6z" fill="#94A88A"/></svg>';
+const LEAF = '<svg viewBox="0 0 24 24" fill="none" stroke="#4A5E44" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-14 14z"/><path d="M5 19l7-7"/></svg>';
+
+const PINS = {
+  bag: { label: "Gym bag", eyebrow: "Coach-approved", title: ["What's in", "!my gym bag"], hs: 148, type: "tote",
+    chips: ["Owala FreeSip", "Plant protein", "Foam roller", "Bala Bangles", "Booty bands", "Dumbbells", "Massage gun", "Protein bars", "Thick mat"],
+    cta: "Shop the whole bag" },
+  home: { label: "Home workout", eyebrow: "One set of dumbbells · 3 rounds", title: ["Living room", "!strength workout"], hs: 112, type: "list",
+    rows: [["Goblet squat", "Hold one dumbbell at your chest. Sit back and down."], ["Romanian deadlift", "Soft knees. Hinge at the hips and slide the weights down your legs."], ["Bent-over row", "Hinge forward and pull your elbows back toward your ribs."], ["Banded glute bridge", "Band above your knees. Squeeze at the top for a second."], ["Overhead press", "Ribs down. Press straight up, then lower slowly."]],
+    note: "10 to 12 reps each. Start light and keep your form clean.", cta: "Get the home kit" },
+  creatine: { label: "Fuel", eyebrow: "The short version", title: ["Creatine", "!for women"], hs: 150, acc: "#9E5434", tint: "#F6E0D4", type: "facts",
+    rows: [["3 to 5 grams a day", "That's the usual amount for healthy adults."], ["Any time of day", "Taking it every day matters more than timing."], ["A little water at first", "Some people hold extra water early on. It isn't fat."], ["Ask your doctor first if", "you're pregnant, nursing or managing a kidney condition."]],
+    cta: "Read the fuel note" },
+  snacks: { label: "Fuel", eyebrow: "Around 20 grams each", title: ["Easy protein", "!snacks"], hs: 140, acc: "#9E5434", tint: "#F6E0D4", type: "grams",
+    tiles: [["~20 g", "Greek yogurt, 1 cup"], ["~25 g", "Cottage cheese, 1 cup"], ["~18 g", "3 eggs"], ["~20 g", "Tuna, 1 can"], ["20 g", "Barebells protein bar"], ["21 g", "Orgain protein shake"]],
+    note: "Numbers vary by brand, so check the label.", cta: "Read the fuel note" },
+  rest: { label: "Recovery", eyebrow: "Rest days count", title: ["Rest day ideas", "!that still count"], hs: 108, acc: "#8A74AE", tint: "#ECE5F5", type: "facts",
+    rows: [["A slow 30-minute walk", "Easy pace. Bring a podcast."], ["Ten minutes of stretching", "Or an easy flow on your mat."], ["Foam roll tight spots", "30 to 60 seconds each, slow and steady."], ["Prep for tomorrow", "Pack your bag and fill your bottle."], ["An early night", "Aim for 7 to 9 hours of sleep."]],
+    cta: "Read the restore note" },
+  water: { label: "Hydration", eyebrow: "Settle it once", title: ["Water or", "!electrolytes?"], hs: 132, acc: "#5D879F", tint: "#DDEAF1", type: "vs",
+    vs: [["Water", "Most of the time", ["Most workouts", "Under an hour", "A few big gulps every 15 to 20 minutes"], "#8FB3C9"], ["Electrolytes", "When they help", ["Long sessions", "Hot yoga and hot walks", "Very sweaty classes"], "#D98B6A"]],
+    note: "Color check: pale yellow means you're good.", cta: "Read the hydration note" },
+  bulky: { label: "Strength", eyebrow: "Myth, meet facts", title: ["Will lifting", "!make me bulky?"], hs: 118, type: "big", big: "No.",
+    rows: [["Everyday things feel easier", "Groceries, stairs, carrying kids."], ["You look more defined", "Bulking up takes years of training and eating for it."], ["It supports bone strength", "And that matters more as you get older."]],
+    cta: "Read the strength note" },
+  shelf: { label: "Our rules", eyebrow: "Not on our shelf", title: ["3 things", "!we'll never sell"], hs: 136, acc: "#9E5434", tint: "#F6E0D4", type: "shelf",
+    struck: ["Detox teas", "Fat burners", "Waist trainers"], instead: "Real meals, real sleep, and lifting a little heavier every week.",
+    cta: "See what we do sell" },
+  gifts: { label: "Gift guide", eyebrow: "Coach-approved gifts", title: ["Gifts for women", "!who work out"], hs: 112, type: "gifts",
+    tiles: [["bottle", "Owala FreeSip"], ["bangles", "Bala Bangles"], ["roller", "Foam roller"], ["gun", "Massage gun"], ["bands", "Booty bands"], ["mat", "Thick mat"]],
+    note: "Things she'll actually use, all year.", cta: "Shop the gift picks" }
+};
+
+const key = new URLSearchParams(location.search).get("p") || "bag";
+const p = PINS[key];
+const root = document.documentElement.style;
+if (p.hs) root.setProperty("--hs", p.hs + "px");
+if (p.acc) root.setProperty("--acc", p.acc);
+if (p.tint) root.setProperty("--tint", p.tint);
+const title = p.title.map(t => t[0] === "!" ? `<span><em>${t.slice(1)}</em></span>` : `<span>${t}</span>`).join("");
+const rows = (list, mark) => list.map(([b, s], i) => `<div class="card"><div class="mk">${mark ? mark : i + 1}</div><div><b>${b}</b><span>${s}</span></div></div>`).join("");
+let body = "";
+if (p.type === "list") body = rows(p.rows);
+if (p.type === "facts") body = rows(p.rows, LEAF);
+if (p.type === "vs") body = `<div class="vs">${p.vs.map(([h, k, li, c]) => `<div class="col" style="--c:${c}"><h2>${h}</h2><p>${k}</p><ul>${li.map(x => `<li>${x}</li>`).join("")}</ul></div>`).join("")}</div>`;
+if (p.type === "grams") body = `<div class="tiles">${p.tiles.map(([g, n]) => `<div class="tile"><i>${g}</i><b>${n}</b></div>`).join("")}</div>`;
+if (p.type === "gifts") body = `<div class="tiles tiles--3">${p.tiles.map(([id, n]) => `<div class="gift" style="${SS.vars(SS.ITEM_CAT[id])}">${SS.art(id)}<b>${n}</b></div>`).join("")}</div>`;
+if (p.type === "tote") body = `<div class="totebox">${SS.tote({ interactive: false })}</div><div class="chips">${p.chips.map(c => `<span>${c}</span>`).join("")}</div>`;
+if (p.type === "big") body = `<div class="big">${p.big}</div>${rows(p.rows, LEAF)}`;
+if (p.type === "shelf") body = `<ul class="struck">${p.struck.map(s => `<li>${s}</li>`).join("")}</ul><div class="instead"><p>Do this instead</p><b>${p.instead}</b></div>`;
+if (p.note) body += `<p class="note">${p.note}</p>`;
+const css = document.createElement("style");
+css.textContent = SS.ART_CSS;
+document.head.append(css);
+document.getElementById("pin").innerHTML = `
+  <div class="orb orb--a"></div><div class="orb orb--b"></div>
+  <div class="head"><div class="brand">${MARK}<span>Sage <em>&amp;</em> Steel</span></div><div class="label">${p.label}</div></div>
+  <p class="eyebrow">${p.eyebrow}</p>
+  <h1>${title}</h1>
+  <div class="body">${body}</div>
+  <div class="foot"><div class="cta">${p.cta}</div><div class="url">sageandsteel.github.io</div></div>`;
+</script>
+</body>
+</html>
