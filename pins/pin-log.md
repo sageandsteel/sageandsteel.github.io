@@ -4,9 +4,20 @@ Every pin that has been posted, plus a backlog of topics for new ones. Anything 
 
 ## Account
 
-- Pinterest: not set up yet. This needs its own business profile, separate from AfterBell.
+- Pinterest: for now, Sage & Steel pins post to the owner's main account, AfterBell Supply (https://www.pinterest.com/tristanyee5/), which logs in with their personal Gmail. They go on six Sage & Steel boards (below), and AfterBell's own name, photo and bio are unchanged. A separate Sage & Steel account needs its own email (planned: tristanyee5+sageandsteel@gmail.com), a password and a birthdate, which only the owner can enter. If that account gets connected, move these boards and pins to it.
 - Audience: women who lift, walk, stretch and train at home or in the gym.
-- Site: https://sageandsteel.github.io/ (not live yet)
+- Site: https://sageandsteel.github.io/ (live, tracking ID sageandsteel-20)
+
+## Boards (on the AfterBell Supply account)
+
+| Board | Use for |
+|---|---|
+| Strength Training for Women | Lifting basics, form, myth-busting |
+| Home Workouts for Women | Dumbbell, band and mat workouts |
+| Fuel for Women Who Lift | Protein, hydration, supplements, what to skip |
+| Recovery and Rest Days | Sleep, foam rolling, rest days |
+| Gym Bag Essentials for Women | Gear roundups and the tote |
+| Gifts for Women Who Work Out | Gift guides (Nov–Dec only) |
 
 ## Site links pins can point to
 
@@ -23,10 +34,19 @@ Every pin that has been posted, plus a backlog of topics for new ones. Anything 
 
 | Date | Image | Title | Board | Link |
 |---|---|---|---|---|
+| 2026-11-18 | gifts-for-women-who-work-out.png | Gift Ideas for Women Who Work Out (Coach-Approved) | Gifts for Women Who Work Out | #edit |
+| 2026-11-18 | whats-in-my-gym-bag.png | What's in My Gym Bag: 9 Coach-Approved Essentials | Gym Bag Essentials for Women | #edit |
+| 2026-11-18 | will-lifting-make-me-bulky.png | Will Lifting Make Me Bulky? No. Here's What It Does | Strength Training for Women | #note-strength |
+| 2026-11-18 | living-room-strength-workout.png | Living Room Strength Workout for Women (Dumbbells Only) | Home Workouts for Women | #kit-living-room-studio |
+| 2026-11-18 | easy-protein-snacks.png | Easy High-Protein Snacks (About 20 Grams Each) | Fuel for Women Who Lift | #note-fuel |
+| 2026-11-18 | never-on-our-shelf.png | 3 Fitness Products We'll Never Sell | Fuel for Women Who Lift | #notes |
+| 2026-11-18 | creatine-for-women.png | Creatine for Women: 4 Things to Know | Fuel for Women Who Lift | #note-fuel |
+| 2026-11-18 | water-or-electrolytes.png | Water or Electrolytes? When You Actually Need Them | Fuel for Women Who Lift | #note-hydrate |
+| 2026-11-18 | rest-day-ideas.png | Rest Day Ideas That Still Count | Recovery and Rest Days | #note-restore |
 
 ## Ready, not posted
 
-The nine pins in `pin-copy.md`.
+Nothing right now.
 
 ## Topic backlog
 
