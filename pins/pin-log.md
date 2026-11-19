@@ -4,7 +4,7 @@ Every pin that has been posted, plus a backlog of topics for new ones. Anything 
 
 ## Account
 
-- Pinterest: for now, Sage & Steel pins post to the owner's main account, AfterBell Supply (https://www.pinterest.com/tristanyee5/), which logs in with their personal Gmail. They go on six Sage & Steel boards (below), and AfterBell's own name, photo and bio are unchanged. A separate Sage & Steel account needs its own email (planned: tristanyee5+sageandsteel@gmail.com), a password and a birthdate, which only the owner can enter. If that account gets connected, move these boards and pins to it.
+- Pinterest: Sage & Steel pins post to the owner's main account, AfterBell Supply (https://www.pinterest.com/tristanyee5/), which logs in with their personal Gmail. The owner chose this on 2026-11-19: they want every site's Pinterest on that one personal-email account, not a separate account. Pins go on the six Sage & Steel boards below. Leave AfterBell's name, photo and bio as they are.
 - Audience: women who lift, walk, stretch and train at home or in the gym.
 - Site: https://sageandsteel.github.io/ (live, tracking ID sageandsteel-20)
 
